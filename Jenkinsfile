@@ -10,20 +10,20 @@ pipeline {
     stage("Docker build") {
      steps {
       
-          sh "docker build -t mtewari/GradleDemo ."
+          sh "docker build -t mtewari/gradledemo ."
           }
     }
     stage("Docker push") {
      steps {
           sh "docker login -u mtewari -p Kanpur@3209"
 
-          sh "docker push mtewari/GradleDemo"
+          sh "docker push mtewari/gradledemo"
           }
     }
 stage("Deploy to staging") {
      steps {
  
-          sh "docker run -d --rm -p 8765:8080 --name HWorld mtewari/GradleDemo"
+          sh "docker run -d --rm -p 8765:8080 --name HWorld mtewari/gradledemo"
      }
 }
     }
