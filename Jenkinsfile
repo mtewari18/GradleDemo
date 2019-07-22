@@ -10,7 +10,7 @@ pipeline {
     stage("Docker build") {
      steps {
       
-          sh "docker build -t mtewari18/HWorld ."
+          sh "docker build -t mtewari/HWorld ."
           }
     }
     stage("Docker push") {
